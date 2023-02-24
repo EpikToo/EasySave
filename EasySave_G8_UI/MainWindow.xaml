@@ -1,0 +1,119 @@
+﻿<Window x:Class="EasySave_G8_UI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EasySave_G8_UI"
+        mc:Ignorable="d"
+        ResizeMode="NoResize"
+        Title="EasySave G8" Height="720" Width="1280"
+        Icon="/Assets/Pictures/icon.ico">
+
+
+    <Grid Background="#828CA5">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="294*"/>
+            <ColumnDefinition Width="68*"/>
+            <ColumnDefinition Width="123*"/>
+            <ColumnDefinition Width="795*"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Left" Width="345" Background="#FF283845" Grid.ColumnSpan="2">
+            <StackPanel.Resources>
+                <Style x:Key="Flag" TargetType="RadioButton">
+                    <Style.Triggers>
+                        <Trigger Property="IsChecked" Value="False">
+                            <Setter Property="Opacity" Value="0.5"/>
+                        </Trigger>
+                    </Style.Triggers>
+
+                    <Setter Property="BorderThickness" Value="2"/>
+
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="RadioButton">
+                                <Border BorderThickness="{TemplateBinding BorderThickness}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                Background="Transparent"
+                                CornerRadius="20">
+                                    <Image Source="{Binding Path=Content, RelativeSource={RelativeSource TemplatedParent}}"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </StackPanel.Resources>
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Left" Width="345" Background="#FF283845">
+                <TextBlock x:Name="Title" Foreground="White" TextAlignment="Center" FontSize="36" Background="#FF161E27" Height="81"><Run Text="E"/><Run Language="fr-fr" Text="asy Save G8"/><LineBreak/><Run Language="fr-fr"/></TextBlock>
+                <TextBlock x:Name="Version" Foreground="White" TextAlignment="Center" FontSize="16" Background="#FF161E27" Height="41"><Run Language="fr-fr" Text="v3.0"/><LineBreak/><Run/></TextBlock>
+            </StackPanel>
+
+            <Button x:Name="Dashboard_btn" Margin="-40,30,10,10" HorizontalAlignment="Left" FontSize="22" Height="40" Width="250" Background="#FFDDDDDD" Click="Dashboard_Click">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="17"></Setter>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <Button x:Name="Classics_btn" Margin="-40,10,10,10" HorizontalAlignment="Left" FontSize="22" Height="40" Width="250" Click="Classics_Click" Background="#FFDDDDDD" >
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="17"></Setter>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <Button x:Name="Works_btn" Margin="-40,10,10,10" HorizontalAlignment="Left" FontSize="22" Height="40" Width="250" Background="#FFDDDDDD" Click="Works_Click">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="17"></Setter>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <Button x:Name="Logs_btn" Margin="-40,10,10,10" HorizontalAlignment="Left" FontSize="22" Height="40" Width="250" Background="#FFDDDDDD" Click="Logs_Click">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="17"></Setter>
+                    </Style>
+                </Button.Resources>
+            </Button>
+
+            <Button x:Name="Loading_btn" Margin="-40,10,10,10" HorizontalAlignment="Left" FontSize="22" Height="40" Width="250" Background="#FFD9D9D9" Click="Loading_btn_Click">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="17"></Setter>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <Button x:Name="Settings_btn" Margin="-40,10,10,10" HorizontalAlignment="Left" FontSize="22" Height="40" Width="250" Background="#FFD9D9D9" Click="Settings_btn_Click">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="17"></Setter>
+                    </Style>
+                </Button.Resources>
+            </Button>
+
+            <Button x:Name="Remote_btn" Margin="-40,10,10,10" HorizontalAlignment="Left" FontSize="22" Height="40" Width="250" Background="#FFD9D9D9" Content="Remote Server" Click="Remote_btn_Click">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="17"></Setter>
+                    </Style>
+                </Button.Resources>
+            </Button>
+
+            <Button x:Name="Shutdown_btn" Margin="-40,10,10,10" HorizontalAlignment="Left" FontSize="22" Height="40" Width="250" Background="#FFD9D9D9" Click="Shutdown_Click">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="17"></Setter>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <ItemsControl HorizontalAlignment="Right" Margin="0,10,30,0">
+                <StackPanel Orientation="Horizontal">
+                    <RadioButton x:Name="FRradio" Content="/Assets/Pictures/england.png" Style="{StaticResource Flag}" Width="40" Height="40" Checked="EngButton_Checked" HorizontalAlignment="Left" Margin="0,0,15,0"/>
+                    <RadioButton x:Name="ENradio" Content="/Assets/Pictures/france.png" Style="{StaticResource Flag}" Width="40" Height="40" Checked="FraButton_Checked" HorizontalAlignment="Left"/>
+                </StackPanel>
+            </ItemsControl>
+        </StackPanel>
+        <Frame x:Name="Main" NavigationUIVisibility="Hidden" Margin="51,0,0,0" Grid.ColumnSpan="3" Grid.Column="1" />
+    </Grid>
+</Window>

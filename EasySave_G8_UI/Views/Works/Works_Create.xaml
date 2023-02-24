@@ -1,0 +1,94 @@
+﻿<Page x:Class="EasySave_G8_UI.Views.Works.Works_Create"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:EasySave_G8_UI.Views.Works"
+      mc:Ignorable="d" 
+      d:DesignHeight="704" d:DesignWidth="935"
+      Title="Works_Create">
+
+    <Grid SnapsToDevicePixels="True">
+        <Border HorizontalAlignment="Center" Height="550" VerticalAlignment="Top" Width="750" Margin="0,75,0,0" Background="#161E27" CornerRadius="60,60,60,60">
+            <Grid>
+                <TextBlock Name="CreateWork_Title" Foreground="White" FontSize="35" VerticalAlignment="Top" TextAlignment="Center" HorizontalAlignment="Center" FontFamily="Bahnschrift Condensed" Height="40" Width="326">
+                <Run Language="fr-fr" Text="Create Work"/>
+                </TextBlock>
+                <Border HorizontalAlignment="Center" Height="470" VerticalAlignment="Top" Width="700" Margin="0,50,0,0" Background="#FF283845" CornerRadius="60,60,60,60">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="100"/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition Width="100"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+
+                        <TextBlock Name="Name" Text="Name" Foreground="White" FontSize="17" Margin="49,58,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Grid.Column="0" FontFamily="Bahnschrift Condensed" Grid.RowSpan="2">
+                        <Run Language="fr-fr"/>
+                        </TextBlock>
+                        <TextBox x:Name="textBox1" TextWrapping="Wrap" Height="30" FontSize="20" VerticalAlignment="Top" HorizontalAlignment="Center" Width="420" Grid.Column="1" Margin="0,54,0,0" Grid.RowSpan="2"/>
+
+                        <TextBlock Name="Source_Path" Text="Source" Foreground="White" FontSize="17" Margin="46,59,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Grid.Column="0" FontFamily="Bahnschrift Condensed" Grid.Row="1" Grid.RowSpan="2">
+                        <Run Language="fr-fr" />
+                        </TextBlock>
+                        <TextBox x:Name="textBox2" TextWrapping="Wrap" Height="30" FontSize="20" VerticalAlignment="Top" HorizontalAlignment="Center" Width="420" Grid.Column="1" Grid.Row="1" Margin="0,54,0,0" Grid.RowSpan="2"/>
+
+                        <Button x:Name="Browse" Content="Browse" FontFamily="Bahnschrift Condensed" Height="30" FontSize="15" BorderBrush="{x:Null}" Grid.Column="2" Margin="0,54,30,50"  Grid.Row="1" Click="Button_Click_Browse" Grid.RowSpan="2">
+                            <Button.Resources>
+                                <Style TargetType="Border">
+                                    <Setter Property="CornerRadius" Value="5"></Setter>
+                                </Style>
+                            </Button.Resources>
+                        </Button>
+
+
+                        <TextBlock Name="Dest_Path" Text="Destination" Foreground="White" FontSize="17" Margin="33,59,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Grid.Column="0" FontFamily="Bahnschrift Condensed" Grid.Row="2" Grid.RowSpan="2">
+                        <Run Language="fr-fr" />
+                        </TextBlock>
+                        <TextBox x:Name="textBox3" TextWrapping="Wrap" Height="30" FontSize="20" VerticalAlignment="Top" HorizontalAlignment="Center" Width="420" Grid.Column="1" Grid.Row="2" Margin="0,54,0,0" Grid.RowSpan="2"/>
+
+                        <Button Name="Browse2" Content="Browse" FontFamily="Bahnschrift Condensed" Height="30" FontSize="15" BorderBrush="{x:Null}" Grid.Column="2" Margin="0,54,30,51"  Grid.Row="2" Click="Button_Click_Browse2" Grid.RowSpan="2">
+                            <Button.Resources>
+                                <Style TargetType="Border">
+                                    <Setter Property="CornerRadius" Value="5"></Setter>
+                                </Style>
+                            </Button.Resources>
+                        </Button>
+
+
+                        <TextBlock Foreground="White" FontSize="17" Margin="52,59,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Grid.Column="0" Grid.Row="3" FontFamily="Bahnschrift Condensed" Grid.RowSpan="2">
+                        <Run Language="fr-fr" Text="Type"/>
+                        </TextBlock>
+                        <ComboBox x:Name="comboBox1" HorizontalAlignment="Center" VerticalAlignment="Top" Height="30" Width="420" Grid.Column="1" Grid.Row="3" Margin="0,54,0,0" Grid.RowSpan="2">
+                            <ComboBoxItem Name="Complete" Content="Complète"/>
+                            <ComboBoxItem Name="Differential" Content="Différentielle"/>
+                        </ComboBox>
+
+                        <TextBlock Name="Execute_Now" TextAlignment="Center" Foreground="White" FontSize="17" VerticalAlignment="Top" HorizontalAlignment="Left" Grid.Column="0" Grid.Row="4" FontFamily="Bahnschrift Condensed" Width="156" Grid.ColumnSpan="2" Margin="-13,58,0,0" Grid.RowSpan="2">
+                        <Run Language="fr-fr" Text="Execute Now"/>
+                        </TextBlock>
+                        <ComboBox x:Name="comboBox2" HorizontalAlignment="Center" VerticalAlignment="Top" Height="30" Width="420" Grid.Column="1" Grid.Row="4" Margin="0,53,0,0" Grid.RowSpan="2">
+                            <ComboBoxItem Name="Yes" Content="Yes"/>
+                            <ComboBoxItem Name="No" Content="No"/>
+                        </ComboBox>
+                    </Grid>
+                </Border>
+                <Button x:Name="Save_btn" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="22" Height="45" Width="250" Background="#FFD9D9D9" Content="Save Work"  Margin="0,459,0,0" Click="Save_btn_Click">
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="25"></Setter>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+            </Grid>
+        </Border>
+    </Grid>
+</Page>

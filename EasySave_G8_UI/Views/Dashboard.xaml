@@ -1,0 +1,23 @@
+﻿<Page x:Class="EasySave_G8_UI.Views.Dashboard"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:EasySave_G8_UI.Views"
+      mc:Ignorable="d" 
+      d:DesignHeight="704" d:DesignWidth="935"
+      Title="Dashboard">
+
+    <Grid SnapsToDevicePixels="True">
+        <Border HorizontalAlignment="Center" Height="550" VerticalAlignment="Top" Width="750" Margin="0,75,0,0" Background="#161E27" CornerRadius="60,60,60,60">
+            <StackPanel Orientation="Vertical">
+                <TextBlock x:Name="DashboardTitle" TextAlignment="Center" HorizontalAlignment="Center" Height="38" TextWrapping="Wrap" VerticalAlignment="Top" Width="456" FontSize="35" FontFamily="Bahnschrift Condensed" Foreground="White">
+                    <Run Language="fr-fr" Text="Dashboard"/>
+                    <LineBreak/><Run Language="fr-fr"/>
+                </TextBlock>
+                <Border HorizontalAlignment="Center" Height="260" VerticalAlignment="Top" Width="700" Margin="0,20,0,0" Background="#FF283845" CornerRadius="60,60,60,60">
+                </Border>
+            </StackPanel>        
+        </Border>
+    </Grid>
+</Page>

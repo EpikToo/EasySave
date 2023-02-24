@@ -1,0 +1,31 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+    <UseWindowsForms>True</UseWindowsForms>
+    <Configurations>Debug;Release;Exe</Configurations>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Assets\Pictures\england.png" />
+    <None Remove="Assets\Pictures\france.png" />
+    <None Remove="Assets\Pictures\france2.png" />
+    <None Remove="Assets\Pictures\icon.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets\Pictures\england.png" />
+    <Resource Include="Assets\Pictures\france.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Pictures\icon.ico" />
+  </ItemGroup>
+
+</Project>

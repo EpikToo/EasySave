@@ -1,0 +1,160 @@
+﻿<Page x:Class="EasySave_G8_UI.Views.Settings"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:EasySave_G8_UI.Views"
+      mc:Ignorable="d" 
+      d:DesignHeight="704" d:DesignWidth="935"
+      Title="Settings">
+
+    <Grid SnapsToDevicePixels="True">
+        <Border HorizontalAlignment="Center" Height="550" VerticalAlignment="Top" Width="750" Margin="0,75,0,0" Background="#161E27" CornerRadius="60,60,60,60">
+            <StackPanel Orientation="Vertical">
+                <TextBlock Foreground="White" FontSize="35" VerticalAlignment="Top" HorizontalAlignment="Center" FontFamily="Bahnschrift Condensed" Height="40" Width="325" TextAlignment="Center">
+                    <Run Language="fr-fr" Text="Settings" Name="Settings_Title"/>
+                </TextBlock>
+                <Border HorizontalAlignment="Center" Height="110" VerticalAlignment="Top" Width="700" Margin="0,10,0,0" Background="#FF283845" CornerRadius="30,30,30,30">
+                    <Grid Height="110">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="100"/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition Width="100"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+
+                        <TextBlock Foreground="White" FontSize="16" Margin="10,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="0" FontFamily="Bahnschrift Condensed" Grid.Row="0">
+                            <Run Language="fr-fr" Text="Blacklist add" Name="txtBlacklistAdd"/>
+                        </TextBlock>
+                        <TextBox x:Name="Blacklist_add" TextWrapping="Wrap" Height="30" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center" Width="419" Grid.Column="1" Grid.Row="0" Margin="30,0,30,0"/>
+
+                        <Button Name="Blacklist_add_btn" Content="Add" FontFamily="Bahnschrift Condensed" Height="30" FontSize="15" BorderBrush="{x:Null}" Grid.Column="2" Margin="0,0,30,13"  Grid.Row="0" Click="Blacklist_add_btn_Click" VerticalAlignment="Bottom">
+                            <Button.Resources>
+                                <Style TargetType="Border">
+                                    <Setter Property="CornerRadius" Value="5"></Setter>
+                                </Style>
+                            </Button.Resources>
+                        </Button>
+
+                        <TextBlock Foreground="White" FontSize="16" Margin="10,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="0" FontFamily="Bahnschrift Condensed" Grid.Row="1">
+                            <Run Language="fr-fr" Text="Blacklist remove"  Name="txtBlacklistRemove"/>
+                        </TextBlock>
+                        <ComboBox x:Name="Blacklist_rm_combobox" HorizontalAlignment="Center" VerticalAlignment="Center" Height="30" Width="419" Grid.Column="1" Grid.Row="1" Margin="30,0,30,0">
+                        </ComboBox>
+
+                        <Button Name="Blacklist_rm_btn" Content="Remove" FontFamily="Bahnschrift Condensed" Height="30" FontSize="15" BorderBrush="{x:Null}" Grid.Column="2" Margin="0,0,30,0"  Grid.Row="1" Click="Blacklist_rm_btn_Click">
+                            <Button.Resources>
+                                <Style TargetType="Border">
+                                    <Setter Property="CornerRadius" Value="5"></Setter>
+                                </Style>
+                            </Button.Resources>
+                        </Button>
+                    </Grid>
+                </Border>
+                <Border Height="110" Width="700" Background="#FF283845" CornerRadius="30,30,30,30" Margin="0,10,0,0">
+                    <Grid Height="110">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="100"/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition Width="100"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+
+                        <TextBlock Foreground="White" FontSize="16" Margin="10,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="0" FontFamily="Bahnschrift Condensed" Grid.Row="0"><Run Language="fr-fr" Text="Prioritylist add" x:Name="Prioritylist_Name"/></TextBlock>
+                        <TextBox x:Name="Prioritylist_add1" TextWrapping="Wrap" Height="30" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center" Width="419" Grid.Column="1" Grid.Row="0" Margin="30,0,30,0"/>
+
+                        <Button x:Name="Prioritylist_add_btn1" Content="Add" FontFamily="Bahnschrift Condensed" Height="30" FontSize="15" BorderBrush="{x:Null}" Grid.Column="2" Margin="0,0,30,0"  Grid.Row="0" Click="Prioritylist_add_btn_Click">
+                            <Button.Resources>
+                                <Style TargetType="{x:Type Border}">
+                                    <Setter Property="CornerRadius" Value="5"/>
+                                </Style>
+                            </Button.Resources>
+                        </Button>
+
+                        <TextBlock Foreground="White" FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Left" Grid.Column="0" FontFamily="Bahnschrift Condensed" Grid.Row="1" Width="134" Grid.ColumnSpan="2" Margin="16,0,0,0"><Run Language="fr-fr" Text="Prioritylist Remove"  x:Name="Prioritylist_rm"/></TextBlock>
+                        <ComboBox x:Name="Prioritylist_rm_combobox1" HorizontalAlignment="Center" VerticalAlignment="Center" Height="30" Width="419" Grid.Column="1" Grid.Row="1" Margin="30,0,30,0">
+                        </ComboBox>
+                        <ComboBox x:Name="PriorityNumer_combobox" HorizontalAlignment="Left" VerticalAlignment="Center" Height="30" Width="30" Grid.Column="1" Grid.Row="0" Margin="465,0,0,0">
+                        </ComboBox>
+
+                        <Button x:Name="Prioritylist_rm_btn1" Content="Remove" FontFamily="Bahnschrift Condensed" Height="30" FontSize="15" BorderBrush="{x:Null}" Grid.Column="2" Margin="0,0,30,0"  Grid.Row="1" Click="Prioritylist_rm_btn_Click">
+                            <Button.Resources>
+                                <Style TargetType="{x:Type Border}">
+                                    <Setter Property="CornerRadius" Value="5"/>
+                                </Style>
+                            </Button.Resources>
+                        </Button>
+                    </Grid>
+                </Border>
+                <Border Height="110" Width="700" Background="#FF283845" CornerRadius="30,30,30,30" Margin="0,10,0,0">
+                    <Grid Height="110">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="100"/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition Width="100"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+
+                        <TextBlock Foreground="White" FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Left" FontFamily="Bahnschrift Condensed" Width="138" Grid.ColumnSpan="2" Margin="11,0,0,0"><Run Language="fr-fr" Text="CryptoSoft Extension" x:Name="Extensionlist_add1_txt"/></TextBlock>
+                        <TextBox x:Name="Extensionlist_add1" TextWrapping="Wrap" Height="30" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center" Width="419" Grid.Column="1" Grid.Row="0" Margin="30,0,30,0"/>
+
+                        <Button x:Name="Extensionlist_add_btn" Content="Add" FontFamily="Bahnschrift Condensed" Height="30" FontSize="15" BorderBrush="{x:Null}" Grid.Column="2" Margin="0,0,30,0"  Grid.Row="0" Click="Extensionlist_add_btn_Click">
+                            <Button.Resources>
+                                <Style TargetType="{x:Type Border}">
+                                    <Setter Property="CornerRadius" Value="5"/>
+                                </Style>
+                            </Button.Resources>
+                        </Button>
+
+                        <TextBlock Foreground="White" FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Left" Grid.Column="0" FontFamily="Bahnschrift Condensed" Grid.Row="1" Width="120" Grid.ColumnSpan="2" Margin="20,0,0,0"><Run Language="fr-fr" Text="Extension Remove"  x:Name="Extensionlist_rm_txt"/></TextBlock>
+                        <ComboBox x:Name="Extensionlist_rm_combobox1" HorizontalAlignment="Center" VerticalAlignment="Center" Height="30" Width="419" Grid.Column="1" Grid.Row="1" Margin="30,0,30,0">
+                        </ComboBox>
+
+                        <Button x:Name="Extensionlist_rm_btn" Content="Remove" FontFamily="Bahnschrift Condensed" Height="30" FontSize="15" BorderBrush="{x:Null}" Grid.Column="2" Margin="0,0,30,0"  Grid.Row="1" Click="Extensionlist_rm_btn_Click">
+                            <Button.Resources>
+                                <Style TargetType="{x:Type Border}">
+                                    <Setter Property="CornerRadius" Value="5"/>
+                                </Style>
+                            </Button.Resources>
+                        </Button>
+                    </Grid>
+                </Border>
+                <Border Height="110" Width="700" Background="#FF283845" CornerRadius="30,30,30,30" Margin="0,10,0,0">
+                    <Grid Height="110">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="100"/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition Width="100"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+
+                        <TextBlock Foreground="White" FontSize="16" Margin="10,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="0" FontFamily="Bahnschrift Condensed" Grid.Row="0"><Run Language="fr-fr" Text="Limite Size en Ko" x:Name="Size_add_txt"/></TextBlock>
+                        <TextBox x:Name="Size_txbx" TextWrapping="Wrap" Height="30" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center" Width="419" Grid.Column="1" Grid.Row="0" Margin="30,0,30,0"/>
+                        <TextBlock Foreground="White" FontSize="16" Margin="10,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="0" FontFamily="Bahnschrift Condensed" Grid.Row="1"><Run Language="fr-fr" Text="Actual Size" x:Name="Actual_Size"/></TextBlock>
+                        <TextBox x:Name="Display_Size" IsReadOnly="True"  Height="30" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Left" Width="60" Grid.Column="1" Grid.Row="1" Margin="40,0,30,0"></TextBox>
+
+                        <Button x:Name="Size_add_btn" Content="Add" FontFamily="Bahnschrift Condensed" Height="30" FontSize="15" BorderBrush="{x:Null}" Grid.Column="2" Margin="0,0,30,0"  Grid.Row="0" Click="Size_add_btn_Click">
+                            <Button.Resources>
+                                <Style TargetType="{x:Type Border}">
+                                    <Setter Property="CornerRadius" Value="5"/>
+                                </Style>
+                            </Button.Resources>
+                        </Button>
+                    </Grid>
+                </Border>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Page>
